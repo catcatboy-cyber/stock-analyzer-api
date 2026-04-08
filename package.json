@@ -1,0 +1,19 @@
+{
+  "name": "stock-ai-analyzer-api",
+  "version": "1.0.0",
+  "description": "Stock AI Analyzer API - Vercel Serverless",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "openai": "^4.28.0"
+  },
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
