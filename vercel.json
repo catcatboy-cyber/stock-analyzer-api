@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "name": "stock-ai-analyzer-api",
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/health",
+      "dest": "/api/health.js"
+    },
+    {
+      "src": "/api/analyze",
+      "dest": "/api/analyze.js"
+    },
+    {
+      "src": "/api/stock/([^/]+)/info",
+      "dest": "/api/stock/[symbol]/info.js?symbol=$1"
+    },
+    {
+      "src": "/api/stock/([^/]+)/history",
+      "dest": "/api/stock/[symbol]/history.js?symbol=$1"
+    },
+    {
+      "src": "/api/stock/([^/]+)/financials",
+      "dest": "/api/stock/[symbol]/financials.js?symbol=$1"
+    },
+    {
+      "src": "/api/stock/([^/]+)/news",
+      "dest": "/api/stock/[symbol]/news.js?symbol=$1"
+    }
+  ],
+  "env": {
+    "OPENROUTER_API_KEY": "@openrouter-api-key"
+  }
+}
